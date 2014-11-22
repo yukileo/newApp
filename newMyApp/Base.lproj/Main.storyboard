@@ -80,6 +80,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button1" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="QrG-3L-qP9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud6-el-Du8">
                                 <rect key="frame" x="239" y="295" width="46" height="30"/>
@@ -87,6 +90,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="button2" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="EQS-lt-JO7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-P8-h2L">
                                 <rect key="frame" x="20" y="215" width="42" height="21"/>
@@ -111,6 +117,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="firstButton" destination="KdL-5t-zdJ" id="apI-e7-yxe"/>
+                        <outlet property="secondButton" destination="ud6-el-Du8" id="AW2-fq-tLQ"/>
                         <outlet property="sum" destination="iDh-P8-h2L" id="Byi-Ho-5Y3"/>
                     </connections>
                 </viewController>
