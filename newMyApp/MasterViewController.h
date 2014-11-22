@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MasterViewController : UITableViewController
-
+{
+    int contentsNumber;
+}
 @end
