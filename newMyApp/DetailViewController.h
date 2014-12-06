@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
+    
 }
 
 -(void)showPicker;

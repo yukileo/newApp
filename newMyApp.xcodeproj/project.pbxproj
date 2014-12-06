@@ -462,6 +462,7 @@
 				B699F17B1A206C4B0097AC37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B699F17C1A206C4B0097AC37 /* Build configuration list for PBXNativeTarget "newMyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				B699F17E1A206C4B0097AC37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
