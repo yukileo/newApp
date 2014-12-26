@@ -16,6 +16,7 @@
 @end
 
 @implementation MasterViewController
+@synthesize myTableView;
 
 - (void)awakeFromNib
 {
@@ -30,7 +31,10 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,6 +50,23 @@
     [_objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+//    NSMutableArray *cells = [[NSMutableArray alloc] init];
+//    for (NSInteger j =0; j < [tableView numberOfSections:j]; ++j) {
+//        for(NSInteger i = 0 i <[])
+//    }
+    
+
+    NSMutableArray *cells = [[NSMutableArray alloc] init];
+//    for (NSInteger j = 0; j < [myTableView numberOfSections]; ++j)
+//    {
+//        for (NSInteger i = 0; i < [myTableView numberOfRowsInSection:j]; ++i)
+//        {
+//            [cells addObject:[UITableView cellForRowsAtIndexPath:[NSIndexPath indexPathForRow:i inSection:j]]];
+//        }
+//    }
+    
+    NSArray *cells = [myTableView visibleCells];
 }
 
 #pragma mark - Table View
@@ -74,6 +95,14 @@
 {
     NSLog(@"table%d",(int)indexPath.row);
     contentsNumber = (int)indexPath.row;
+    i = indexPath.row;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    
+
+
+        [ud setInteger:indexPath.row forKey:@"row"];
+    
 }
 
 
@@ -116,8 +145,14 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
 //        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 //        NSDate *object = _objects[indexPath.row];
+        DetailViewController *viewCon = segue.destinationViewController;
+        viewCon.TableSum = i;
+        
         [[segue destinationViewController] setContentsNumber:[[NSNumber alloc] initWithInt:contentsNumber]  ];
+        
+        
     }
 }
+
 
 @end

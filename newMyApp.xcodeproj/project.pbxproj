@@ -14,7 +14,6 @@
 		B699F1541A206C4A0097AC37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F1531A206C4A0097AC37 /* main.m */; };
 		B699F1581A206C4A0097AC37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F1571A206C4A0097AC37 /* AppDelegate.m */; };
 		B699F15B1A206C4A0097AC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B699F1591A206C4A0097AC37 /* Main.storyboard */; };
-		B699F15E1A206C4A0097AC37 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F15D1A206C4A0097AC37 /* MasterViewController.m */; };
 		B699F1611A206C4A0097AC37 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F1601A206C4A0097AC37 /* DetailViewController.m */; };
 		B699F1631A206C4A0097AC37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B699F1621A206C4A0097AC37 /* Images.xcassets */; };
 		B699F16A1A206C4B0097AC37 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699F1691A206C4B0097AC37 /* XCTest.framework */; };
@@ -22,6 +21,8 @@
 		B699F16C1A206C4B0097AC37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699F14B1A206C4A0097AC37 /* UIKit.framework */; };
 		B699F1741A206C4B0097AC37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B699F1721A206C4B0097AC37 /* InfoPlist.strings */; };
 		B699F1761A206C4B0097AC37 /* newMyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F1751A206C4B0097AC37 /* newMyAppTests.m */; };
+		B6D800131A4BB7B0008BB8CE /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D800121A4BB7B0008BB8CE /* QBFlatButton.m */; };
+		B6D800151A4BE25E008BB8CE /* kongou2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D800141A4BE25E008BB8CE /* kongou2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,6 @@
 		B699F1561A206C4A0097AC37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B699F1571A206C4A0097AC37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B699F15A1A206C4A0097AC37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B699F15C1A206C4A0097AC37 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B699F15D1A206C4A0097AC37 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B699F15F1A206C4A0097AC37 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B699F1601A206C4A0097AC37 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B699F1621A206C4A0097AC37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -56,6 +55,9 @@
 		B699F1711A206C4B0097AC37 /* newMyAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "newMyAppTests-Info.plist"; sourceTree = "<group>"; };
 		B699F1731A206C4B0097AC37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B699F1751A206C4B0097AC37 /* newMyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newMyAppTests.m; sourceTree = "<group>"; };
+		B6D800111A4BB7B0008BB8CE /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
+		B6D800121A4BB7B0008BB8CE /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
+		B6D800141A4BE25E008BB8CE /* kongou2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongou2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +117,10 @@
 		B699F14D1A206C4A0097AC37 /* newMyApp */ = {
 			isa = PBXGroup;
 			children = (
-				B699F1561A206C4A0097AC37 /* AppDelegate.h */,
+				B6D800141A4BE25E008BB8CE /* kongou2.png */,
 				B699F1571A206C4A0097AC37 /* AppDelegate.m */,
+				B699F1561A206C4A0097AC37 /* AppDelegate.h */,
 				B699F1591A206C4A0097AC37 /* Main.storyboard */,
-				B699F15C1A206C4A0097AC37 /* MasterViewController.h */,
-				B699F15D1A206C4A0097AC37 /* MasterViewController.m */,
 				B699F15F1A206C4A0097AC37 /* DetailViewController.h */,
 				B699F1601A206C4A0097AC37 /* DetailViewController.m */,
 				B699F1621A206C4A0097AC37 /* Images.xcassets */,
@@ -131,6 +132,7 @@
 		B699F14E1A206C4A0097AC37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B6D800101A4BB7B0008BB8CE /* Classes */,
 				B699F14F1A206C4A0097AC37 /* newMyApp-Info.plist */,
 				B699F1501A206C4A0097AC37 /* InfoPlist.strings */,
 				B699F1531A206C4A0097AC37 /* main.m */,
@@ -155,6 +157,15 @@
 				B699F1721A206C4B0097AC37 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6D800101A4BB7B0008BB8CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B6D800111A4BB7B0008BB8CE /* QBFlatButton.h */,
+				B6D800121A4BB7B0008BB8CE /* QBFlatButton.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				B699F1631A206C4A0097AC37 /* Images.xcassets in Resources */,
 				B699F1521A206C4A0097AC37 /* InfoPlist.strings in Resources */,
 				B699F15B1A206C4A0097AC37 /* Main.storyboard in Resources */,
+				B6D800151A4BE25E008BB8CE /* kongou2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B699F1581A206C4A0097AC37 /* AppDelegate.m in Sources */,
-				B699F15E1A206C4A0097AC37 /* MasterViewController.m in Sources */,
 				B699F1541A206C4A0097AC37 /* main.m in Sources */,
 				B699F1611A206C4A0097AC37 /* DetailViewController.m in Sources */,
+				B6D800131A4BB7B0008BB8CE /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

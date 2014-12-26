@@ -11,5 +11,10 @@
 @interface MasterViewController : UITableViewController
 {
     int contentsNumber;
+    int i;
+    IBOutlet UITableView *myTableView;
+    
 }
+
+@property (nonatomic,retain) UITableView *myTableView;
 @end
