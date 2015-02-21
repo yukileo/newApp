@@ -188,6 +188,24 @@
     sum2.text = [NSString stringWithFormat:@"%d",n];
     int r = [ud integerForKey:@"meityu"];
     sum3.text = [NSString stringWithFormat:@"%d",r];
+    int KNMS =[ud integerForKey:@"b5-KNMS"];
+    if (KNMS == 1) {
+        _kanmusu.image = [UIImage imageNamed:@"1.png"];
+    }if (KNMS == 2) {
+        _kanmusu.image = [UIImage imageNamed:@"2.png"];
+    }if (KNMS == 3) {
+        _kanmusu.image = [UIImage imageNamed:@"3.png"];
+    }if (KNMS ==4) {
+        _kanmusu.image = [UIImage imageNamed:@"4.png"];
+    }if (KNMS == 5) {
+        _kanmusu.center =  CGPointMake(150,600);
+        _kanmusu.image = [UIImage imageNamed:@"5.png"];
+    }if (KNMS == 6) {
+        
+        _kanmusu.image = [UIImage imageNamed:@"6.png"];
+    }if (KNMS == 7) {
+        _kanmusu.image = [UIImage imageNamed:@"7.png"];
+    }
     NSString *s = [ud stringForKey:@"Num1"];
     [_button1 setTitle: s forState:UIControlStateNormal];
     NSString *t = [ud stringForKey:@"Num2"];
@@ -294,7 +312,7 @@ numberOfRowsInComponent:(NSInteger)component
         if(TheNum <= 4){
             arr = [[NSArray alloc]initWithObjects:@"なし",@"41cm砲",@"46cm砲",@"35.6cm砲",@"15.5cm砲", nil];
         }else if(TheNum==5){
-            arr = [[NSArray alloc]initWithObjects:@"KNGU",@"HIE",@"HRN",@"KRSM",@"NGT",@"MT",@"IS",@"HYG", nil];
+            arr = [[NSArray alloc]initWithObjects:@"金剛",@"比叡",@"榛名",@"霧島",@"長門",@"陸奥",@"伊勢",@"日向", nil];
         }
         tView.text = [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
         
@@ -528,70 +546,102 @@ numberOfRowsInComponent:(NSInteger)component
         
         NSInteger val1 = [pickerView selectedRowInComponent:0];
         NSInteger val2 = [pickerView selectedRowInComponent:0];
+        NSInteger valKNMS = [pickerView selectedRowInComponent:0];
         if(row == 0){
-            val1 = 0;
-            val2 = 0;
+            val1 = 63;
+            val2 = 24;
+            valKNMS = 2;
       NSLog(@"kanmusu1-1");
             //kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1.png"]];
-           _kanmusu.image = [UIImage imageNamed:@"1.png"];
+           _kanmusu.image = [UIImage imageNamed:@"2.png"];
+           _kanmusu.center =  CGPointMake(120,600);
 //            imageView.frame = CGRectMake(0, 0, 300, 400);
 //            imageView.center =  CGPointMake(160, 240);
 //            imageView.tag = 10;
 //            [self.view addSubview:_kanmusu];
-            [ud setObject:@"KNGU" forKey:@"Num5"];
-            [_button5 setTitle:@"KNGU" forState:UIControlStateNormal];
+            [ud setObject:@"金剛" forKey:@"Num5"];
+            [_button5 setTitle:@"金剛" forState:UIControlStateNormal];
             NSLog(@"kanmusu1-2");
         }
         if(row == 1){
-            val1 = 20;
-            val2 = 4;
-           _kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2.png"]];
+            val1 = 63;
+            val2 = 24;
+            valKNMS = 6;
+           _kanmusu.image = [UIImage imageNamed:@"6.png"];
+           _kanmusu.center =  CGPointMake(110,600);
 //            imageView.frame = CGRectMake(0, 0, 300, 400);
 //            imageView.center =  CGPointMake(160, 240);
 //            imageView.tag = 10;
 //            [self.view addSubview:_kanmusu];
-            [ud setObject:@"HIE" forKey:@"Num5"];
-            [_button5 setTitle:@"HIE" forState:UIControlStateNormal];
+            [ud setObject:@"比叡" forKey:@"Num5"];
+            [_button5 setTitle:@"比叡" forState:UIControlStateNormal];
             NSLog(@"kanmusu2");
         }
         if(row == 2){
-            val1 = 26;
-            val2 = 5;
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3.png"]];
-            imageView.frame = CGRectMake(0, 0, 270, 450);
-            imageView.center =  CGPointMake(160, 240);
-            imageView.tag = 10;
-            [self.view addSubview:imageView];
-            [ud setObject:@"HRN" forKey:@"Num5"];
-            [_button5 setTitle:@"HRN" forState:UIControlStateNormal];
+            val1 = 63;
+            val2 = 24;
+            valKNMS = 5;
+             _kanmusu.image = [UIImage imageNamed:@"5.png"];
+             _kanmusu.center =  CGPointMake(150,600);
+            [ud setObject:@"榛名" forKey:@"Num5"];
+            [_button5 setTitle:@"榛名" forState:UIControlStateNormal];
             
         }
         if(row == 3){
-            val1 = 15;
-            val2 = 4;
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4.png"]];
-            imageView.frame = CGRectMake(0, 0, 300, 400);
-            imageView.center =  CGPointMake(160, 240);
-            imageView.tag = 10;
-            [self.view addSubview:imageView];
-            [ud setObject:@"KRSM" forKey:@"Num5"];
-            [_button5 setTitle:@"KRSM" forState:UIControlStateNormal];
+            val1 = 63;
+            val2 = 24;
+            valKNMS = 4;
+             _kanmusu.image = [UIImage imageNamed:@"4.png"];
+             _kanmusu.center =  CGPointMake(150,600);
+            [ud setObject:@"霧島" forKey:@"Num5"];
+            [_button5 setTitle:@"霧島" forState:UIControlStateNormal];
             
         }
         if(row == 4){
-            val1 = 7;
-            val2 = 4;
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"5"]];
-            imageView.frame = CGRectMake(0, 0, 300, 400);
-            imageView.center =  CGPointMake(160, 240);
-            imageView.tag = 10;
-            [self.view addSubview:imageView];
-            [ud setObject:@"NGT" forKey:@"Num5"];
-            [_button5 setTitle:@"NGT" forState:UIControlStateNormal];
+            val1 = 82;
+            val2 = 31;
+            valKNMS = 7;
+            _kanmusu.image = [UIImage imageNamed:@"7.png"];
+            _kanmusu.center =  CGPointMake(120,600);
+            
+            
+            [ud setObject:@"長門" forKey:@"Num5"];
+            [_button5 setTitle:@"長門" forState:UIControlStateNormal];
+            
+        }
+        if(row == 5){
+            val1 = 82;
+            val2 = 32;
+            valKNMS = 8;
+            _kanmusu.image = [UIImage imageNamed:@"8.png"];
+            _kanmusu.center =  CGPointMake(120,600);
+            [ud setObject:@"陸奥" forKey:@"Num5"];
+            [_button5 setTitle:@"陸奥" forState:UIControlStateNormal];
+            
+        }
+        if(row == 6){
+            val1 = 74;
+            val2 = 28;
+            valKNMS = 1;
+            _kanmusu.image = [UIImage imageNamed:@"1.png"];
+            _kanmusu.center =  CGPointMake(120,600);
+            [ud setObject:@"伊勢" forKey:@"Num5"];
+            [_button5 setTitle:@"伊勢" forState:UIControlStateNormal];
+            
+        }
+        if(row == 7){
+            val1 = 74;
+            val2 = 28;
+            valKNMS = 3;
+            _kanmusu.image = [UIImage imageNamed:@"3.png"];
+            _kanmusu.center =  CGPointMake(110,600);
+            [ud setObject:@"日向" forKey:@"Num5"];
+            [_button5 setTitle:@"日向" forState:UIControlStateNormal];
             
         }
         [ud setInteger:val1 forKey:@"b5"];
         [ud setInteger:val2 forKey:@"b5-2"];
+        [ud setInteger:valKNMS forKey:@"b5-KNMS"];
         
         [ud synchronize];
         
