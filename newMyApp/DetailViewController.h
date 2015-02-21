@@ -12,12 +12,14 @@
     int TheNum;
     int ChosenNum;
     
-    NSString *pic1_str;
+    // NSString *pic1_str;
     
     IBOutlet UIButton *b1;
     IBOutlet UIButton *b2;
     IBOutlet UIButton *b3;
     IBOutlet UIButton *b4;
+    IBOutlet UIImageView *kanmusu;
+    
     
 }
 @property (nonatomic) int TableSum;

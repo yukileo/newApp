@@ -14,11 +14,14 @@
 @property (strong, nonatomic) IBOutlet QBFlatButton *button2;
 @property (strong, nonatomic) IBOutlet QBFlatButton *button3;
 @property (strong, nonatomic) IBOutlet QBFlatButton *button4;
+@property (strong, nonatomic) IBOutlet QBFlatButton *button5;
 @property (strong, nonatomic) IBOutlet UITextView *contentField;
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
 @property (strong, nonatomic) IBOutlet UITextField *titleField2;
 @property (strong, nonatomic) IBOutlet UIButton *firstButton;
 @property (strong, nonatomic) IBOutlet UIButton *secondButton;
+@property (strong, nonatomic) IBOutlet UIImageView *kanmusu;
+
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITextView *contentfield;
 @property (strong, nonatomic) id detailItem;
@@ -35,6 +38,7 @@
     NSArray *aItemList;
     IBOutlet UILabel *sum;
     IBOutlet UILabel *sum2;
+    IBOutlet UILabel *sum3;
     
     }
 
@@ -44,7 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    kanmusu.image = [UIImage imageNamed:@"1.png"];
     _button1 = [QBFlatButton buttonWithType:UIButtonTypeCustom];
     _button1.frame = CGRectMake(220, 130 - 20 - 40, 80, 60);
     _button1.faceColor = [UIColor colorWithRed:86.0/255.0 green:161.0/255.0 blue:217.0/255.0 alpha:1.0];
@@ -113,10 +117,27 @@
     [_button4 addTarget:self action:@selector(button4) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_button4];
+    
+    _button5 = [QBFlatButton buttonWithType:UIButtonTypeCustom];
+    _button5.frame = CGRectMake(20, 130 - 20 - 40, 80, 60);
+    _button5.faceColor = [UIColor colorWithRed:86.0/255.0 green:161.0/255.0 blue:217.0/255.0 alpha:1.0];
+    _button5.sideColor = [UIColor colorWithRed:79.0/255.0 green:127.0/255.0 blue:179.0/255.0 alpha:1.0];
+    _button5.radius = 8.0;
+    _button5.margin = 4.0;
+    _button5.depth = 3.0;
+    
+    
+    _button5.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    [_button5 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_button5 setTitle:@"艦娘" forState:UIControlStateNormal];
+    
+    [_button5 addTarget:self action:@selector(button5) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_button5];
 
 
     picker = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 20, picker.frame.size.width, picker.frame.size.width)];
-    picker.tag=1;
+//    picker.tag=1;
     
 //    picker2 = [[UIPickerView alloc]init];initWithFrame:CGRectMake(0, 20, picker.frame.size.width, picker.frame.size.width);
 //    picker2.tag=2;
@@ -129,6 +150,9 @@
     
     // 選択インジケータを表示
     picker.showsSelectionIndicator = YES;
+    
+//    picker.tag = 5;
+    
     
     // UIPickerのインスタンスをビューに追加
 //    [self.view addSubview:picker];
@@ -152,8 +176,6 @@
     
     _secondButton.tag = 4;
     
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -164,6 +186,8 @@
     sum.text = [NSString stringWithFormat:@"%d",i];
     int n = [ud integerForKey:@"taiku"];
     sum2.text = [NSString stringWithFormat:@"%d",n];
+    int r = [ud integerForKey:@"meityu"];
+    sum3.text = [NSString stringWithFormat:@"%d",r];
     NSString *s = [ud stringForKey:@"Num1"];
     [_button1 setTitle: s forState:UIControlStateNormal];
     NSString *t = [ud stringForKey:@"Num2"];
@@ -172,6 +196,8 @@
     [_button3 setTitle: u forState:UIControlStateNormal];
     NSString *v = [ud stringForKey:@"Num4"];
     [_button4 setTitle: v forState:UIControlStateNormal];
+    NSString *w = [ud stringForKey:@"Num5"];
+    [_button5 setTitle: w forState:UIControlStateNormal];
 }
 -(IBAction)clear {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
@@ -202,8 +228,14 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return 5;
+    if(TheNum == 5){
+        return 8;
+    }else {
+        return 5;
+    }
 }
+
+
 
 /**
  * 行のサイズを変更
@@ -231,16 +263,45 @@ numberOfRowsInComponent:(NSInteger)component
 }
 
 
+//
+//- (NSString *)pickerView:(UIPickerView *)pickerView
+//             titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    NSArray * arr;
+//
+//    if(TheNum <= 4){
+//        arr = [[NSArray alloc]initWithObjects:@"なし",@"41cm砲",@"46cm砲",@"35.6cm砲",@"15.5cm砲", nil];
+//        return [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
+//
+//    }else{
+//        arr = [[NSArray alloc]initWithObjects:@"KNGU",@"HIE",@"HRN",@"KRSM",@"NGT",@"MT",@"IS",@"HYG", nil];
+//        return [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
+//     
+//    }
+//}
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSArray *arr = [[NSArray alloc]initWithObjects:@"なし",@"41cm砲",@"46cm砲",@"35.6cm砲",@"15.5cm砲", nil];
-    pic1_str = [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
-    return pic1_str;
+
+
+- (UIView *)pickerView:(UIPickerView *)pickerView
+            viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel* tView = (UILabel*)view;
+    {
+        tView = [[UILabel alloc] init];
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:13]];
+        //[tView setTextAlignment:UITextAlignmentLeft];
+        tView.numberOfLines=3;
+        NSArray * arr;
+        if(TheNum <= 4){
+            arr = [[NSArray alloc]initWithObjects:@"なし",@"41cm砲",@"46cm砲",@"35.6cm砲",@"15.5cm砲", nil];
+        }else if(TheNum==5){
+            arr = [[NSArray alloc]initWithObjects:@"KNGU",@"HIE",@"HRN",@"KRSM",@"NGT",@"MT",@"IS",@"HYG", nil];
+        }
+        tView.text = [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
+        
+    }
+    return tView;
     
 }
-
 
 
 - (void)pickerView:(UIPickerView *)pickerView
@@ -253,91 +314,104 @@ numberOfRowsInComponent:(NSInteger)component
 
     if(TheNum == 1){
     // 1列目の選択された行数を取得
-    NSInteger val0 = [pickerView selectedRowInComponent:0];
-        NSInteger val4 = [pickerView selectedRowInComponent:0];
+    NSInteger vala_1 = [pickerView selectedRowInComponent:0];
+        NSInteger vala_2 = [pickerView selectedRowInComponent:0];
+        NSInteger vala_3= [pickerView selectedRowInComponent:0];
         if(row == 0){
-            val0 = 0;
-            val4 = 0;
+            vala_1 = 0;
+            vala_2 = 0;
+            vala_3 = 0;
             [ud setObject:@"なし" forKey:@"Num1"];
             [_button1 setTitle:@"なし" forState:UIControlStateNormal];
         }
         if(row == 1){
-            val0 = 20;
-            val4 = 4;
+            vala_1 = 20;
+            vala_2 = 4;
+            vala_3 = 0;
             [ud setObject:@"41cm砲" forKey:@"Num1"];
             [_button1 setTitle:@"41cm砲" forState:UIControlStateNormal];
         }
         if(row == 2){
-            val0 = 26;
-            val4 = 5;
+            vala_1 = 26;
+            vala_2 = 5;
+            vala_3 = 0;
             [ud setObject:@"46cm砲" forKey:@"Num1"];
             [_button1 setTitle:@"46cm砲" forState:UIControlStateNormal];
         }
         if(row == 3){
-            val0 = 15;
-            val4 = 4;
+            vala_1 = 15;
+            vala_2 = 4;
+            vala_3 = 0;
             [ud setObject:@"35.6cm砲" forKey:@"Num1"];
             [_button1 setTitle:@"35.6cm砲" forState:UIControlStateNormal];
         }
         if(row == 4){
-            val0 = 7;
-            val4 = 4;
+            vala_1 = 7;
+            vala_2 = 4;
+            vala_3 = 1;
             [ud setObject:@"15.5cm砲" forKey:@"Num1"];
             [_button1 setTitle:@"15.5cm砲" forState:UIControlStateNormal];
         }
-        [ud setInteger:val0 forKey:@"b1"];
-        [ud setInteger:val4 forKey:@"b1-2"];
+        [ud setInteger:vala_1 forKey:@"b1"];
+        [ud setInteger:vala_2 forKey:@"b1-2"];
+        [ud setInteger:vala_3 forKey:@"b1-3"];
         
      [ud synchronize];
     
-    NSLog(@"1列目:%d行目が選択", val0);
     
 //sum.text = [NSString
-//                stringWithFormat:@"%ld",(long)val1];
+//                stringWithFormat:@"%ld",(long)val1];/Users/yuki/Desktop/newMyApp/newMyApp.xcodeproj
  
     }
     if(TheNum == 2){
         // 1列目の選択された行数を取得
         
        
-        NSInteger val1 = [pickerView selectedRowInComponent:0];
-        NSInteger val5 = [pickerView selectedRowInComponent:0];
+        NSInteger valb_1 = [pickerView selectedRowInComponent:0];
+        NSInteger valb_2 = [pickerView selectedRowInComponent:0];
+         NSInteger valb_3 = [pickerView selectedRowInComponent:0];
         if(row == 0){
-            val1 = 0;
-            val5 = 0;
+            valb_1 = 0;
+            valb_2 = 0;
+            valb_3 = 0;
             [ud setObject:@"なし" forKey:@"Num2"];
             [_button2 setTitle:@"なし" forState:UIControlStateNormal];
         }
         if(row == 1){
-            val1 = 20;
-            val5 = 4;
+            valb_1 = 20;
+            valb_2 = 4;
+            valb_3 = 0;
             [ud setObject:@"41cm砲" forKey:@"Num2"];
             [_button2 setTitle:@"41cm砲" forState:UIControlStateNormal];
         }
         if(row == 2){
-            val1 = 26;
-            val5 = 5;
+            valb_1 = 26;
+            valb_2 = 5;
+            valb_3 = 0;
             [ud setObject:@"46cm砲" forKey:@"Num2"];
             [_button2 setTitle:@"46cm砲" forState:UIControlStateNormal];
         }
         if(row == 3){
-            val1 = 15;
-            val5 = 4;
+            valb_1 = 15;
+            valb_2 = 4;
+            valb_3 = 0;
             [ud setObject:@"35.6cm砲" forKey:@"Num2"];
             [_button2 setTitle:@"35.6cm砲" forState:UIControlStateNormal];
         }
         if(row == 4){
-            val1 = 7;
-            val5 = 4;
+            valb_1 = 7;
+            valb_2 = 4;
+            valb_3 = 1;
             [ud setObject:@"15.5cm砲" forKey:@"Num2"];
             [_button2 setTitle:@"15.5cm砲" forState:UIControlStateNormal];
         }
-        [ud setInteger:val1 forKey:@"b2"];
-        [ud setInteger:val5 forKey:@"b2-2"];
+        [ud setInteger:valb_1 forKey:@"b2"];
+        [ud setInteger:valb_2 forKey:@"b2-2"];
+        [ud setInteger:valb_3 forKey:@"b2-3"];
         
         [ud synchronize];
         
-        NSLog(@"1列目:%d行目", val1);
+
         
         
 
@@ -347,44 +421,52 @@ numberOfRowsInComponent:(NSInteger)component
         // 1列目の選択された行数を取得
         
         
-        NSInteger val2 = [pickerView selectedRowInComponent:0];
-        NSInteger val6 = [pickerView selectedRowInComponent:0];
+        NSInteger valc_1 = [pickerView selectedRowInComponent:0];
+        NSInteger valc_2 = [pickerView selectedRowInComponent:0];
+        NSInteger valc_3 = [pickerView selectedRowInComponent:0];
         if(row == 0){
-            val2 = 0;
-            val6 = 0;
+            valc_1 = 0;
+            valc_2 = 0;
+            valc_3 = 0;
             [ud setObject:@"なし" forKey:@"Num3"];
             [_button3 setTitle:@"なし" forState:UIControlStateNormal];
         }
         if(row == 1){
-            val2 = 20;
-            val6 = 4;
+            valc_1 = 20;
+            valc_2 = 4;
+            valc_3 = 0;
             [ud setObject:@"41cm砲" forKey:@"Num3"];
             [_button3 setTitle:@"41cm砲" forState:UIControlStateNormal];
         }
         if(row == 2){
-            val2 = 26;
-            val6 = 5;
+            valc_1 = 26;
+            valc_2 = 5;
+            valc_3 = 0;
             [ud setObject:@"46cm砲" forKey:@"Num3"];
             [_button3 setTitle:@"46cm砲" forState:UIControlStateNormal];
         }
         if(row == 3){
-            val2 = 15;
-            val6 = 4;
-            [ud setObject:@"15.5cm砲" forKey:@"Num3"];
-            [_button3 setTitle:@"15.5cm砲" forState:UIControlStateNormal];
+            valc_1 = 15;
+            valc_2 = 4;
+            valc_3 = 0;
+            [ud setObject:@"35.6cm砲" forKey:@"Num3"];
+            [_button3 setTitle:@"35.6cm砲" forState:UIControlStateNormal];
         }
         if(row == 4){
-            val2 = 7;
-            val6 = 4;
+            valc_1 = 7;
+            valc_2 = 4;
+            valc_3 = 1;
             [ud setObject:@"15.5cm砲" forKey:@"Num3"];
             [_button3 setTitle:@"15.5cm砲" forState:UIControlStateNormal];
         }
-        [ud setInteger:val2 forKey:@"b3"];
-        [ud setInteger:val6 forKey:@"b3-2"];
+        [ud setInteger:valc_1 forKey:@"b3"];
+        [ud setInteger:valc_2 forKey:@"b3-2"];
+        [ud setInteger:valc_3 forKey:@"b3-3"];
         
         [ud synchronize];
         
-        NSLog(@"1列目:%d行目", val2);
+        
+
         
         
     }
@@ -392,83 +474,179 @@ numberOfRowsInComponent:(NSInteger)component
         // 1列目の選択された行数を取得
         
         
-        NSInteger val3 = [pickerView selectedRowInComponent:0];
-        NSInteger val7 = [pickerView selectedRowInComponent:0];
+        NSInteger vald_1 = [pickerView selectedRowInComponent:0];
+        NSInteger vald_2 = [pickerView selectedRowInComponent:0];
+        NSInteger vald_3 = [pickerView selectedRowInComponent:0];
         if(row == 0){
-            val3 = 0;
-            val7 = 0;
+            vald_1 = 0;
+            vald_2 = 0;
+            vald_3 = 0;
             [ud setObject:@"なし" forKey:@"Num4"];
             [_button4 setTitle:@"なし" forState:UIControlStateNormal];
         }
         if(row == 1){
-            val3 = 20;
-            val7 = 4;
+            vald_1 = 20;
+            vald_2 = 4;
+            vald_3 = 0;
             [ud setObject:@"41cm砲" forKey:@"Num4"];
             [_button4 setTitle:@"41cm砲" forState:UIControlStateNormal];
         }
         if(row == 2){
-            val3 = 26;
-            val7 = 5;
+            vald_1 = 26;
+            vald_2 = 5;
+            vald_3 = 0;
             [ud setObject:@"46cm砲" forKey:@"Num4"];
             [_button4 setTitle:@"46cm砲" forState:UIControlStateNormal];
         }
         if(row == 3){
-            val3 = 15;
-            val7 = 4;
+            vald_1 = 15;
+            vald_2 = 4;
+            vald_3 = 0;
             [ud setObject:@"35.6cm砲" forKey:@"Num4"];
             [_button4 setTitle:@"35.6cm砲" forState:UIControlStateNormal];
         }
         if(row == 4){
-            val3 = 7;
-            val7 = 4;
+            vald_1 = 7;
+            vald_2 = 4;
+            vald_3 = 1;
             [ud setObject:@"15.5cm砲" forKey:@"Num4"];
             [_button4 setTitle:@"15.5cm砲" forState:UIControlStateNormal];
         }
-        [ud setInteger:val3 forKey:@"b4"];
-        [ud setInteger:val7 forKey:@"b4-2"];
+        [ud setInteger:vald_1 forKey:@"b4"];
+        [ud setInteger:vald_2 forKey:@"b4-2"];
+        [ud setInteger:vald_3 forKey:@"b4-3"];
         
         [ud synchronize];
         
-        NSLog(@"1列目:%d行目", val3);
+
         
         
     }
+    if(TheNum == 5){
+        // 1列目の選択された行数を取得
+      
+        
+        NSInteger val1 = [pickerView selectedRowInComponent:0];
+        NSInteger val2 = [pickerView selectedRowInComponent:0];
+        if(row == 0){
+            val1 = 0;
+            val2 = 0;
+      NSLog(@"kanmusu1-1");
+            //kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1.png"]];
+            kanmusu.image = [UIImage imageNamed:@"1.png"];
+//            imageView.frame = CGRectMake(0, 0, 300, 400);
+//            imageView.center =  CGPointMake(160, 240);
+//            imageView.tag = 10;
+//            [self.view addSubview:_kanmusu];
+            [ud setObject:@"KNGU" forKey:@"Num5"];
+            [_button5 setTitle:@"KNGU" forState:UIControlStateNormal];
+            NSLog(@"kanmusu1-2");
+        }
+        if(row == 1){
+            val1 = 20;
+            val2 = 4;
+           kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2.png"]];
+//            imageView.frame = CGRectMake(0, 0, 300, 400);
+//            imageView.center =  CGPointMake(160, 240);
+//            imageView.tag = 10;
+//            [self.view addSubview:_kanmusu];
+            [ud setObject:@"HIE" forKey:@"Num5"];
+            [_button5 setTitle:@"HIE" forState:UIControlStateNormal];
+            NSLog(@"kanmusu2");
+        }
+        if(row == 2){
+            val1 = 26;
+            val2 = 5;
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3.png"]];
+            imageView.frame = CGRectMake(0, 0, 270, 450);
+            imageView.center =  CGPointMake(160, 240);
+            imageView.tag = 10;
+            [self.view addSubview:imageView];
+            [ud setObject:@"HRN" forKey:@"Num5"];
+            [_button5 setTitle:@"HRN" forState:UIControlStateNormal];
+            
+        }
+        if(row == 3){
+            val1 = 15;
+            val2 = 4;
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4.png"]];
+            imageView.frame = CGRectMake(0, 0, 300, 400);
+            imageView.center =  CGPointMake(160, 240);
+            imageView.tag = 10;
+            [self.view addSubview:imageView];
+            [ud setObject:@"KRSM" forKey:@"Num5"];
+            [_button5 setTitle:@"KRSM" forState:UIControlStateNormal];
+            
+        }
+        if(row == 4){
+            val1 = 7;
+            val2 = 4;
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"5"]];
+            imageView.frame = CGRectMake(0, 0, 300, 400);
+            imageView.center =  CGPointMake(160, 240);
+            imageView.tag = 10;
+            [self.view addSubview:imageView];
+            [ud setObject:@"NGT" forKey:@"Num5"];
+            [_button5 setTitle:@"NGT" forState:UIControlStateNormal];
+            
+        }
+        [ud setInteger:val1 forKey:@"b5"];
+        [ud setInteger:val2 forKey:@"b5-2"];
+        
+        [ud synchronize];
+        
+        
+        
+    }
+    
 
     int a = [ud integerForKey:@"b1"];  // KEY_Iの内容をint型として取得
    
-    NSLog(@"a%d",a);
     
     int b = [ud integerForKey:@"b2"];  // KEY_Iの内容をint型として取得
     
-     NSLog(@"b%d",b);
+
     int c = [ud integerForKey:@"b3"];  // KEY_Iの内容をint型として取得
     
-    NSLog(@"a%d",a);
+
     
     int d = [ud integerForKey:@"b4"];  // KEY_Iの内容をint型として取得
     
+    int k = [ud integerForKey:@"b5"];
+    
     int e = [ud integerForKey:@"b1-2"];
-    NSLog(@"b%d",b);
-    int f = [ud integerForKey:@"b2-2"];
-    NSLog(@"b%d",b);
+        int f = [ud integerForKey:@"b2-2"];
+    
     int g = [ud integerForKey:@"b3-2"];
-    NSLog(@"b%d",b);
+   
     int h = [ud integerForKey:@"b4-2"];
-    NSLog(@"b%d",b);
+    int j = [ud integerForKey:@"b5-2"];
+    int p = [ud integerForKey:@"b1-3"];
+
+    int l = [ud integerForKey:@"b2-3"];
+
+    int m = [ud integerForKey:@"b3-3"];
+
+    int n = [ud integerForKey:@"b4-3"];
+    int o = [ud integerForKey:@"b5-3"];
+
     
    [ud synchronize];
     
     
     
     
-    sum.text = [NSString stringWithFormat:@"%d",a + b + c + d];
-    sum2.text = [NSString stringWithFormat:@"%d",e + f + g + h];
+    sum.text = [NSString stringWithFormat:@"%d",a + b + c + d + k];
+    sum2.text = [NSString stringWithFormat:@"%d",e + f + g + h + j];
+    sum3.text = [NSString stringWithFormat:@"%d",l + m + n+ o + p];
     
     
     int i = sum.text.intValue;
     [ud setInteger:i forKey: @"fire"];
-    int n = sum2.text.intValue;
+    int q = sum2.text.intValue;
     [ud setInteger:n forKey:@"taiku"];
+    int r = sum3.text.intValue;
+    [ud setInteger:n forKey:@"meityu"];
     [ud synchronize];
 }
 
@@ -477,24 +655,34 @@ numberOfRowsInComponent:(NSInteger)component
 
 
 -(IBAction)button1{
-    [self selectlimit];
     TheNum = 1;
+    [self selectlimit];
+    
     
 }
 -(IBAction)button2{
-    [self selectlimit];
     TheNum = 2;
+    [self selectlimit];
 }
 -(IBAction)button3{
-  [self selectlimit];
     TheNum = 3;
+  [self selectlimit];
 }
 -(IBAction)button4{
-    [self selectlimit];
     TheNum = 4;
+    [self selectlimit];
+
+}
+-(IBAction)button5{
+    TheNum = 5;
+    [self selectlimit];
+
+//    picker.tag
 }
 
 -(void)selectlimit{
+    [picker reloadAllComponents];
+    
     if(hideView == nil){
         hideView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 240)];
         hideView.backgroundColor = [UIColor lightGrayColor];
@@ -597,23 +785,6 @@ numberOfRowsInComponent:(NSInteger)component
 //    
 //    return label;
 //}
-- (UIView *)pickerView:(UIPickerView *)pickerView
-            viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    
-    UILabel* tView = (UILabel*)view;
-    if (!tView)
-    {
-        tView = [[UILabel alloc] init];
-        [tView setFont:[UIFont fontWithName:@"Helvetica" size:13]];
-        //[tView setTextAlignment:UITextAlignmentLeft];
-        tView.numberOfLines=3;
-        NSArray *arr = [[NSArray alloc]initWithObjects:@"なし",@"41cm砲",@"46cm砲",@"35.6cm砲",@"15.5cm砲", nil];
-        tView.text = [NSString stringWithFormat:@"%@",[arr objectAtIndex:row]];
 
-    }
-    
-    
-    return tView;
-    
-}
+
 @end

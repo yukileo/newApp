@@ -21,6 +21,14 @@
 		B699F16C1A206C4B0097AC37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B699F14B1A206C4A0097AC37 /* UIKit.framework */; };
 		B699F1741A206C4B0097AC37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B699F1721A206C4B0097AC37 /* InfoPlist.strings */; };
 		B699F1761A206C4B0097AC37 /* newMyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B699F1751A206C4B0097AC37 /* newMyAppTests.m */; };
+		B6C370B81A73900000D8D34D /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B01A73900000D8D34D /* 1.png */; };
+		B6C370B91A73900000D8D34D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B11A73900000D8D34D /* 2.png */; };
+		B6C370BA1A73900000D8D34D /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B21A73900000D8D34D /* 3.png */; };
+		B6C370BB1A73900000D8D34D /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B31A73900000D8D34D /* 4.png */; };
+		B6C370BC1A73900000D8D34D /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B41A73900000D8D34D /* 5.png */; };
+		B6C370BD1A73900000D8D34D /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B51A73900000D8D34D /* 6.png */; };
+		B6C370BE1A73900000D8D34D /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B61A73900000D8D34D /* 7.png */; };
+		B6C370BF1A73900000D8D34D /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C370B71A73900000D8D34D /* 8.png */; };
 		B6D800131A4BB7B0008BB8CE /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D800121A4BB7B0008BB8CE /* QBFlatButton.m */; };
 		B6D800151A4BE25E008BB8CE /* kongou2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D800141A4BE25E008BB8CE /* kongou2.png */; };
 /* End PBXBuildFile section */
@@ -55,6 +63,14 @@
 		B699F1711A206C4B0097AC37 /* newMyAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "newMyAppTests-Info.plist"; sourceTree = "<group>"; };
 		B699F1731A206C4B0097AC37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B699F1751A206C4B0097AC37 /* newMyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newMyAppTests.m; sourceTree = "<group>"; };
+		B6C370B01A73900000D8D34D /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		B6C370B11A73900000D8D34D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		B6C370B21A73900000D8D34D /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		B6C370B31A73900000D8D34D /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		B6C370B41A73900000D8D34D /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		B6C370B51A73900000D8D34D /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		B6C370B61A73900000D8D34D /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		B6C370B71A73900000D8D34D /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		B6D800111A4BB7B0008BB8CE /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
 		B6D800121A4BB7B0008BB8CE /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
 		B6D800141A4BE25E008BB8CE /* kongou2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongou2.png; sourceTree = "<group>"; };
@@ -123,6 +139,14 @@
 				B699F1591A206C4A0097AC37 /* Main.storyboard */,
 				B699F15F1A206C4A0097AC37 /* DetailViewController.h */,
 				B699F1601A206C4A0097AC37 /* DetailViewController.m */,
+				B6C370B01A73900000D8D34D /* 1.png */,
+				B6C370B11A73900000D8D34D /* 2.png */,
+				B6C370B21A73900000D8D34D /* 3.png */,
+				B6C370B31A73900000D8D34D /* 4.png */,
+				B6C370B41A73900000D8D34D /* 5.png */,
+				B6C370B51A73900000D8D34D /* 6.png */,
+				B6C370B61A73900000D8D34D /* 7.png */,
+				B6C370B71A73900000D8D34D /* 8.png */,
 				B699F1621A206C4A0097AC37 /* Images.xcassets */,
 				B699F14E1A206C4A0097AC37 /* Supporting Files */,
 			);
@@ -245,8 +269,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B699F1631A206C4A0097AC37 /* Images.xcassets in Resources */,
+				B6C370BA1A73900000D8D34D /* 3.png in Resources */,
 				B699F1521A206C4A0097AC37 /* InfoPlist.strings in Resources */,
+				B6C370BD1A73900000D8D34D /* 6.png in Resources */,
+				B6C370BC1A73900000D8D34D /* 5.png in Resources */,
+				B6C370BB1A73900000D8D34D /* 4.png in Resources */,
+				B6C370BF1A73900000D8D34D /* 8.png in Resources */,
 				B699F15B1A206C4A0097AC37 /* Main.storyboard in Resources */,
+				B6C370BE1A73900000D8D34D /* 7.png in Resources */,
+				B6C370B81A73900000D8D34D /* 1.png in Resources */,
+				B6C370B91A73900000D8D34D /* 2.png in Resources */,
 				B6D800151A4BE25E008BB8CE /* kongou2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
