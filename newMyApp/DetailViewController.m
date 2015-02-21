@@ -48,7 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    kanmusu.image = [UIImage imageNamed:@"1.png"];
+
     _button1 = [QBFlatButton buttonWithType:UIButtonTypeCustom];
     _button1.frame = CGRectMake(220, 130 - 20 - 40, 80, 60);
     _button1.faceColor = [UIColor colorWithRed:86.0/255.0 green:161.0/255.0 blue:217.0/255.0 alpha:1.0];
@@ -533,7 +533,7 @@ numberOfRowsInComponent:(NSInteger)component
             val2 = 0;
       NSLog(@"kanmusu1-1");
             //kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1.png"]];
-            kanmusu.image = [UIImage imageNamed:@"1.png"];
+           _kanmusu.image = [UIImage imageNamed:@"1.png"];
 //            imageView.frame = CGRectMake(0, 0, 300, 400);
 //            imageView.center =  CGPointMake(160, 240);
 //            imageView.tag = 10;
@@ -545,7 +545,7 @@ numberOfRowsInComponent:(NSInteger)component
         if(row == 1){
             val1 = 20;
             val2 = 4;
-           kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2.png"]];
+           _kanmusu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2.png"]];
 //            imageView.frame = CGRectMake(0, 0, 300, 400);
 //            imageView.center =  CGPointMake(160, 240);
 //            imageView.tag = 10;

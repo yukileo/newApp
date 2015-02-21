@@ -18,7 +18,7 @@
     IBOutlet UIButton *b2;
     IBOutlet UIButton *b3;
     IBOutlet UIButton *b4;
-    IBOutlet UIImageView *kanmusu;
+
     
     
 }

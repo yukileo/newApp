@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E0897BF4-4439-4EC7-B36B-B698E417B432" translatesAutoresizingMaskIntoConstraints="NO" id="MfK-Ga-VGC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ABC36409-DED2-4041-BB2F-FD6B1A48CADD" translatesAutoresizingMaskIntoConstraints="NO" id="MfK-Ga-VGC">
                                 <rect key="frame" x="-151" y="332" width="509" height="577"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" title="Title" id="PHg-VV-WpY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="kanmusu" destination="MfK-Ga-VGC" id="V4y-rW-P2u"/>
+                        <outlet property="kanmusu" destination="MfK-Ga-VGC" id="gsl-EX-b05"/>
                         <outlet property="sum" destination="iDh-P8-h2L" id="1Cy-l1-mwr"/>
                         <outlet property="sum2" destination="Q3H-Wt-bfV" id="a6K-o4-N1R"/>
                         <outlet property="sum3" destination="mTX-oB-LBE" id="EYn-Qs-weF"/>
@@ -86,7 +86,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E0897BF4-4439-4EC7-B36B-B698E417B432" width="500" height="500">
+        <image name="ABC36409-DED2-4041-BB2F-FD6B1A48CADD" width="500" height="500">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
